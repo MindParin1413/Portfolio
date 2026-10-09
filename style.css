@@ -1,0 +1,425 @@
+/* นำเข้าฟอนต์ Prompt จาก Google Fonts ให้เหมือนต้นฉบับเรฟเฟอเรนซ์ */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* โทนสีจากเรฟเฟอเรนซ์ */
+    --brand-dark: #132338;     /* สีน้ำเงินเข้มมาก (เกือบดำ) สำหรับหัวข้อและปุ่ม */
+    --brand-light: #f4f3ef;    /* สีพื้นหลังครีมอมเทาอ่อนๆ */
+    --brand-white: #ffffff;    /* สีขาวบริสุทธิ์ สำหรับการ์ด */
+    --text-main: #2b3544;      /* สีตัวหนังสือหลัก */
+    --text-muted: #6b7280;     /* สีตัวหนังสือรอง / สีเทา */
+    --border-color: #e5e7eb;   /* สีเส้นขอบ */
+    
+    /* ตัวแปรความนุ่มนวลของ Animation */
+    --smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+body {
+    background-color: var(--brand-light);
+    color: var(--text-main);
+    line-height: 1.8; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+}
+
+/* =========================================
+Navbar (เมนูด้านบน)
+========================================= */
+.navbar {
+    background-color: var(--brand-dark);
+    padding: 1.25rem 0;
+    box-shadow: 0 4px 20px rgba(19, 35, 56, 0.15); 
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 3rem; 
+    justify-content: flex-end; 
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6); 
+    font-size: 0.9rem;
+    font-weight: 400; 
+    letter-spacing: 0.5px;
+    transition: var(--smooth);
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid transparent; 
+}
+
+.nav-link:hover {
+    color: var(--brand-white);
+}
+
+.nav-link.active {
+    color: var(--brand-white);
+    font-weight: 500;
+    border-bottom: 1px solid var(--brand-white); 
+}
+
+/* =========================================
+Layout หลัก
+========================================= */
+.container {
+    max-width: 1100px;
+    margin: 4rem auto 6rem auto; 
+    padding: 0 2rem;
+}
+
+/* =========================================
+Profile Section (หน้าแรก)
+========================================= */
+.profile-section {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h1 {
+    font-size: 3.2rem;
+    font-weight: 600; 
+    line-height: 1.2;
+    color: var(--brand-dark);
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.5px;
+}
+
+.info-group { margin-bottom: 2rem; }
+.info-group h3 { 
+    font-size: 0.7rem; 
+    color: var(--text-muted); 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin-bottom: 0.5rem; 
+    font-weight: 500; 
+}
+.info-group p { 
+    font-size: 1rem; 
+    font-weight: 300; 
+    max-width: 90%; 
+    color: var(--brand-dark);
+}
+
+/* รูปโปรไฟล์ */ 
+.profile-image-container { width: 40%; flex-shrink: 0; }
+.profile-img { 
+    width: 100%; 
+    aspect-ratio: 4 / 5; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    box-shadow: 0 20px 50px rgba(19, 35, 56, 0.1); 
+    background-color: #e2e8f0; 
+    border: none; 
+    transition: var(--smooth);
+}
+.profile-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(19, 35, 56, 0.15);
+}
+
+/* ปุ่มและ Social Links */ 
+.social-links { 
+    margin-top: 3.5rem; 
+    display: flex; 
+    gap: 1.2rem; 
+}
+.btn { 
+    display: inline-flex; 
+    align-items: center; 
+    padding: 0.8rem 2.2rem; 
+    background-color: var(--brand-dark); 
+    color: var(--brand-white); 
+    text-decoration: none; 
+    border-radius: 4px; 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    letter-spacing: 0.5px;
+    transition: var(--smooth); 
+    border: 1px solid var(--brand-dark);
+}
+.btn:hover { 
+    background-color: #1a2f4c; 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(19, 35, 56, 0.15);
+}
+.btn-outline { 
+    background-color: transparent; 
+    color: var(--brand-dark); 
+    border: 1px solid var(--border-color); 
+}
+.btn-outline:hover { 
+    background-color: transparent; 
+    border-color: var(--brand-dark); 
+    color: var(--brand-dark);
+    box-shadow: none; 
+}
+
+/* ========================================= 
+Assignments Section (หน้าแรก)
+========================================= */ 
+.assignments-section {
+    background-color: var(--brand-dark);
+    padding: 5rem 4rem; 
+    border-radius: 12px;
+    margin-bottom: 5rem; 
+    box-shadow: 0 30px 60px rgba(19, 35, 56, 0.15);
+}
+
+.assignments-section h2 { 
+    font-size: 1.8rem; 
+    color: var(--brand-white); 
+    margin-bottom: 2.5rem; 
+    font-weight: 500; 
+    letter-spacing: 0.5px;
+}
+
+.assignment-list { 
+    list-style: none; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 1.5rem; 
+}
+
+.assignment-list a { 
+    text-decoration: none; 
+    color: rgba(255, 255, 255, 0.8); 
+    display: block; 
+    padding: 1.8rem 1.5rem; 
+    background-color: transparent; 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 6px; 
+    font-weight: 400; 
+    font-size: 0.95rem;
+    transition: var(--smooth); 
+    position: relative; 
+}
+
+.assignment-list a::after { 
+    content: "→"; 
+    position: absolute; 
+    right: 1.5rem; 
+    opacity: 0; 
+    transform: translateX(-15px); 
+    transition: var(--smooth); 
+}
+
+.assignment-list a:hover { 
+    background-color: var(--brand-white); 
+    color: var(--brand-dark);
+    border-color: var(--brand-white); 
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.assignment-list a:hover::after { 
+    opacity: 1; 
+    transform: translateX(0); 
+}
+
+/* ========================================= 
+Projects Grid (หน้าผลงาน) 
+========================================= */ 
+.page-title { 
+    font-size: 2.8rem; 
+    color: var(--brand-dark); 
+    margin-bottom: 4rem; 
+    font-weight: 600; 
+    letter-spacing: -0.5px;
+}
+
+.projects-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 2.5rem; 
+}
+
+.project-card { 
+    background-color: var(--brand-white); 
+    border: 1px solid var(--border-color); 
+    border-radius: 12px; 
+    padding: 0; 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    transition: var(--smooth); 
+    margin-bottom: 0;
+}
+
+.project-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 40px rgba(19, 35, 56, 0.08); 
+    border-color: transparent; 
+}
+
+/* ================== ส่วนจัดการรูปภาพเดี่ยว ================== */
+.project-img-wrapper {
+    width: 100%;
+    height: 240px; 
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ================== แกลลอรีตารางรูปภาพ (หลายรูป) ================== */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px; /* เส้นขอบบางๆ ตัดระหว่างรูป */
+    background-color: var(--border-color); /* ใช้สีขอบเป็นพื้นหลังตัดเส้น */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.gallery-item {
+    height: 120px; /* ความสูงช่องละ 120 (รวม 2 ชั้น = 240 เท่ากับรูปเดี่ยวพอดี) */
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นรูปมือให้รู้ว่ากดได้ */
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* เอฟเฟกต์ซูมเวลานำเมาส์ชี้ (รองรับทั้งรูปเดี่ยวและตาราง) */
+.project-card:hover .project-img-wrapper .project-img,
+.gallery-item:hover .project-img {
+    transform: scale(1.08);
+}
+
+/* ================== ส่วนเนื้อหาในการ์ด ================== */
+.project-content {
+    padding: 2.5rem; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.project-card h2 { 
+    font-size: 1.4rem; 
+    color: var(--brand-dark); 
+    margin-bottom: 1rem; 
+    font-weight: 600;
+}
+
+.project-desc { 
+    color: var(--text-muted); 
+    margin-bottom: 2.5rem; 
+    font-size: 0.95rem; 
+    font-weight: 300;
+}
+
+.project-tags {
+    margin-top: auto; 
+}
+
+.tag { 
+    display: inline-block; 
+    padding: 0.35rem 1rem; 
+    background-color: transparent; 
+    color: var(--text-muted); 
+    border: 1px solid var(--border-color); 
+    border-radius: 999px; 
+    font-size: 0.75rem; 
+    margin-right: 0.5rem; 
+    font-weight: 500; 
+    letter-spacing: 0.5px;
+}
+
+/* ========================================= 
+Modal / ป๊อปอัปสำหรับซูมรูปภาพ 
+========================================= */ 
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 35, 56, 0.85); 
+    backdrop-filter: blur(5px); 
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: scale(1); 
+}
+
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 45px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: var(--smooth);
+}
+
+.close-modal:hover {
+    color: var(--brand-white);
+    transform: rotate(90deg); 
+}
+
+/* ========================================= 
+Responsive (รองรับมือถือ) 
+========================================= */ 
+@media (max-width: 768px) { 
+    .profile-section { 
+        flex-direction: column-reverse; 
+        gap: 3rem; 
+        text-align: left; 
+    }
+    
+    .profile-info h1 {
+        font-size: 2.5rem;
+    }
+
+    .profile-image-container {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .assignments-section {
+        padding: 3rem 2rem;
+    }
+}
