@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - ปรินทร บุญชิต</title>
+    <!-- เรียกใช้ External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">หน้าแรก (Portfolio)</a>
+            <a href="project.html" class="nav-link active">ผลงาน (Projects)</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="page-title">ผลงานและโปรเจกต์ต่างๆ</h1>
+        
+        <div class="projects-grid">
+            <!-- โปรเจกต์ที่ 1: Pacific Dream (มี 4 รูป จัดแบบตาราง) -->
+            <article class="project-card card">
+                <div class="project-gallery">
+                    <div class="gallery-item">
+                        <img src="Project(2).png" alt="Pacific Dream Gameplay 1" class="project-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Project(3).png" alt="Pacific Dream Gameplay 2" class="project-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Project(4).png" alt="Pacific Dream Info" class="project-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Project(5).png" alt="Pacific Dream Environment" class="project-img" onclick="openModal(this.src)">
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h2>Pacific Dream</h2>
+                    <p class="project-desc">โปรเจกต์จำลองมหาสมุทรแบบ 2D top-down และ interactive projection ที่พัฒนาเพื่อการแข่งขัน OceanX Education Impact Challenge</p>
+                    <div class="project-tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- โปรเจกต์ที่ 2: Smart Garage (รูปเดี่ยว) -->
+            <article class="project-card card">
+                <div class="project-img-wrapper">
+                    <img src="Project(1).png" alt="Smart Garage Digital Twin" class="project-img" onclick="openModal(this.src)">
+                </div>
+                <div class="project-content">
+                    <h2>Smart Garage Digital Twin</h2>
+                    <p class="project-desc">การสร้างแบบจำลอง Digital Twin ใน Unity สำหรับควบคุมการทำงานของพัดลมอุตสาหกรรมและระบบเตือนภัยควันไฟแบบ Real-time</p>
+                    <div class="project-tags">
+                        <span class="tag">Digital Twin</span>
+                        <span class="tag">IoT</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- โปรเจกต์ที่ 3: Living Light (มี 3 รูป) -->
+            <article class="project-card card">
+                <div class="project-gallery">
+                    <!-- รูปที่ 1: หน้าจอเกม (กำหนดให้กว้างเต็ม 2 ช่อง และสูงขึ้นนิดหน่อยเพื่อให้ดูโดดเด่น) -->
+                    <div class="gallery-item" style="grid-column: span 2; height: 160px;">
+                        <img src="Project(6).jpg" alt="Living Light Gameplay" class="project-img" onclick="openModal(this.src)">
+                    </div>
+                    <!-- รูปที่ 2 และ 3: บอร์ด Arduino และการทดสอบ (แบ่งคนละครึ่ง) -->
+                    <div class="gallery-item">
+                        <img src="Project(7).jpg" alt="Arduino Setup" class="project-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Project(8).jpg" alt="Hardware Testing" class="project-img" onclick="openModal(this.src)">
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h2>Living Light: The Language of Bioluminescence</h2>
+                    <p class="project-desc">Interactive game ที่ใช้ Processing ทำงานร่วมกับบอร์ด Arduino และเซ็นเซอร์วัดแสง (HW-486) สำหรับงาน Hackathon</p>
+                    <div class="project-tags">
+                        <span class="tag">Processing</span>
+                        <span class="tag">Arduino</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- HTML สำหรับกล่องป๊อปอัปโชว์รูปใหญ่ -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="expandedImg">
+    </div>
+
+    <!-- เรียกใช้ External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

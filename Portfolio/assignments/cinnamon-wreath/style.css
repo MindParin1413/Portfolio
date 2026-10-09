@@ -1,0 +1,106 @@
+/* 
+   1. การตั้งค่าพื้นฐาน (Base Styles) 
+    */
+body {
+    text-align: center; 
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Box model: การใช้ Margin, padding, border และ width */
+.container {
+    width: 80%;
+    margin: 20px auto;       /* Margin อัตโนมัติ ซ้าย-ขวา ทำให้กล่องอยู่กึ่งกลาง */
+    padding: 20px;           /* Padding เพิ่มพื้นที่ด้านในกล่อง */
+    border: 2px solid #333;  /* Border เส้นกรอบของกล่อง */
+    background-color: #fff;
+}
+
+/* 
+   2. การจัดการรูปภาพ (Images & Hover Effects) 
+    */
+.main-image {
+    width: 400px;            /* กำหนด width */
+    height: 600px;           /* กำหนด height */
+    border: 3px solid #ccc;
+    margin-bottom: 20px;
+    /* เพิ่ม Transition เพื่อให้เวลาขยับดูนุ่มนวล */
+    transition: all 0.3s ease-in-out; 
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ชี้รูปหลัก */
+.main-image:hover {
+    transform: scale(1.05) rotate(2deg); /* ขยายขึ้นนิดนึง และเอียง 2 องศา */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาดำให้ดูมีมิติ */
+}
+
+/* 
+   3. ส่วนผสม (Ingredients - Flexbox แนวนอน) 
+  
+.ingredient-box {
+    display: flex;               /* flex-box คือ Display: flex */
+    flex-wrap: wrap;             /* ถ้าพื้นที่ไม่พอให้ปัดตกไปบรรทัดใหม่ */
+    justify-content: center;     /* จัดให้อยู่ตรงกลาง */
+    padding: 10px;
+    margin: 10px;
+    border: 2px dashed blue;     /* ตีกรอบให้เห็นว่าเป็นกล่อง Flex */
+}
+
+.item {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid red;
+    background-color: #ffe6e6;
+    /* เพิ่ม Transition ให้กล่อง */
+    transition: all 0.3s ease-in-out;
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ชี้ที่กล่องส่วนผสม (เหมือนการ์ดในสไลด์) */
+.item:hover {
+    transform: translateY(-4px); /* ทำให้กล่องลอยขึ้นด้านบน 4px */
+    box-shadow: 0 8px 18px rgba(49, 130, 206, 0.2); /* เพิ่มเงาสีฟ้า */
+    border-color: #3182ce;       /* เปลี่ยนสีขอบเป็นสีฟ้า */
+    cursor: pointer;             /* เปลี่ยนเมาส์เป็นรูปนิ้วชี้ */
+}
+
+/* 
+   4. วิธีทำ (Steps - Flexbox แนวตั้ง) 
+    */
+.step-container {
+    display: flex;
+    flex-direction: column;      /* ให้กล่องลูกเรียงเป็นแนวตั้งจากบนลงล่าง */
+    align-items: center;         /* จัดให้อยู่กึ่งกลางแนวนอน */
+}
+
+.step {
+    display: flex;               /* ใช้ flex ในกล่องลูก เพื่อให้รูปกับข้อความอยู่คู่กัน */
+    align-items: center;
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid green;
+    width: 90%;
+    /* เพิ่ม Transition ให้กล่องวิธีทำ */
+    transition: all 0.3s ease;
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ชี้ที่กล่องวิธีทำ */
+.step:hover {
+    background-color: #f0f8ff;   /* เปลี่ยนสีพื้นหลังอ่อนๆ ตอนชี้ */
+    transform: translateY(-2px); /* ลอยขึ้นนิดนึง */
+}
+
+.step-img {
+    width: 200px;
+    height: 250px;
+    transition: all 0.3s ease;
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ชี้รูปเล็กในวิธีทำ */
+.step-img:hover {
+    transform: scale(1.1);       /* ขยายรูปขึ้น 10% */
+}
+
+.step p {
+    margin-left: 20px;
+    text-align: left;            /* จัดข้อความชิดซ้าย */
+}
